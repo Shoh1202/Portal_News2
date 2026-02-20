@@ -1,0 +1,14 @@
+{% extends "default.html" %}
+{% load my_filters %}
+{% block title %}{{ news.title }}{% endblock title %}
+
+{% block content %}
+  <a href="{% url 'news' %}">← Назад</a>
+
+  <h1>{{ news.title }}</h1>
+  <div>{{ news.time_add }} | Дата публикации : {{ news.time_add }} | </div>
+
+  <hr>
+
+  <p>{{ news.text|censor }}</p>
+{% endblock content %}
