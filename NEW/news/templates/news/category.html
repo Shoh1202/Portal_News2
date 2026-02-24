@@ -1,0 +1,11 @@
+{% extends "default.html" %}
+<h1>{{ category.name }}</h1>
+
+<form method="post" action="{% url 'toggle_subscription' category.id %}">
+    {% csrf_token %}
+    <button type="submit">Подписаться</button>
+</form>
+
+{% for post in posts %}
+    <h3>{{ post.title }}</h3>
+{% endfor %}

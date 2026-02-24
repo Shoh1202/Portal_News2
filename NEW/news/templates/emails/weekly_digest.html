@@ -1,0 +1,12 @@
+<p>Здравствуй, {{ user.username }}!</p>
+
+{% if posts %}
+  <p>Новые статьи за неделю:</p>
+  <ul>
+    {% for post in posts %}
+      <li><a href="{{ site_url }}{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>За неделю новых статей по твоим категориям не было.</p>
+{% endif %}
