@@ -1,0 +1,6 @@
+{% extends "default.html" %}
+{% block title %}Стать автором{% endblock %}
+{% block content %}
+{% if is_not_author %}
+<button> <a href="news/index"> Хочу стать автором!</a> </button>
+{% endif %}
